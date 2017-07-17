@@ -10,8 +10,8 @@
 		7DD41998E77086E948BA0236 /* Pods_Travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDEB60E58D605008B620E8 /* Pods_Travel.framework */; };
 		8A060B201F0E3B0300C85867 /* TravelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A060B1F1F0E3B0300C85867 /* TravelData.swift */; };
 		8A22AC591F16B8E800CFA623 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22AC581F16B8E800CFA623 /* Tickets.swift */; };
+		8A22AC5B1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22AC5A1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift */; };
 		8A975DD31F1269F5008F11D6 /* ManagerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A975DD21F1269F5008F11D6 /* ManagerData.swift */; };
-		8A975DD51F126E5D008F11D6 /* ListOfFlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A975DD41F126E5D008F11D6 /* ListOfFlightsTableViewController.swift */; };
 		8AF97A9B1F0C3F2900CADA1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */; };
 		8AF97A9D1F0C3F2900CADA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */; };
 		8AF97AA01F0C3F2900CADA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF97A9E1F0C3F2900CADA1B /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 		80B1BAA0FA51C7FE2915D64A /* Pods-Travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.release.xcconfig"; sourceTree = "<group>"; };
 		8A060B1F1F0E3B0300C85867 /* TravelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelData.swift; sourceTree = "<group>"; };
 		8A22AC581F16B8E800CFA623 /* Tickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
+		8A22AC5A1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfFlightsTableViewController.swift; sourceTree = "<group>"; };
 		8A975DD21F1269F5008F11D6 /* ManagerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerData.swift; sourceTree = "<group>"; };
-		8A975DD41F126E5D008F11D6 /* ListOfFlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfFlightsTableViewController.swift; sourceTree = "<group>"; };
 		8AF97A971F0C3F2900CADA1B /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 				8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */,
 				8A060B1F1F0E3B0300C85867 /* TravelData.swift */,
 				8A22AC581F16B8E800CFA623 /* Tickets.swift */,
-				8A975DD41F126E5D008F11D6 /* ListOfFlightsTableViewController.swift */,
+				8A22AC5A1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift */,
 				8AF97A9E1F0C3F2900CADA1B /* Main.storyboard */,
 				8AF97AA11F0C3F2900CADA1B /* Assets.xcassets */,
 				8AF97AA31F0C3F2900CADA1B /* LaunchScreen.storyboard */,
@@ -228,7 +228,7 @@
 				8A22AC591F16B8E800CFA623 /* Tickets.swift in Sources */,
 				8A975DD31F1269F5008F11D6 /* ManagerData.swift in Sources */,
 				8A060B201F0E3B0300C85867 /* TravelData.swift in Sources */,
-				8A975DD51F126E5D008F11D6 /* ListOfFlightsTableViewController.swift in Sources */,
+				8A22AC5B1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift in Sources */,
 				8AF97A9B1F0C3F2900CADA1B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

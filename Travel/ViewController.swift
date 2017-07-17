@@ -13,11 +13,16 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var whereLabel: UILabel!
     @IBOutlet weak var thereLabel: UILabel!
     @IBOutlet weak var backLabel: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBAction func searchButtonAction (_ sender: Any) {
+        if !whereLabel.text!.isEmpty {
+            manager.loadJSON(fromLabel.text!, whereLabel.text!)
+        }
+    }
     
     var cityList: [String] = ["TIV", "LON", "OSL", "BLR"]
     let manager: ManagerData = ManagerData()
@@ -25,7 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL)
-        manager.loadJSON()
+        manager.loadJSON("OSL", "LON")
         
         view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             

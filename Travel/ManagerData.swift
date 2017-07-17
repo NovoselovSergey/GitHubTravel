@@ -12,11 +12,10 @@ import RealmSwift
 import SwiftyJSON
 
 class ManagerData {
-    func loadJSON() {
+    func loadJSON(_ cityFrom: String, _ cityWhere: String) {
         let realm = try! Realm()
         
-        let url = "http://api.travelpayouts.com/v2/prices/latest?origin=LON&currency=rub&destination=TIV&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token="
-        var destination: String = ""
+        let url = "http://api.travelpayouts.com/v2/prices/latest?origin=\(cityFrom)&currency=rub&destination=\(cityWhere)&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token=eb3a8f0f77e463487f11791048fa31fe"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
