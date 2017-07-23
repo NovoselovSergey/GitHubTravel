@@ -38,4 +38,46 @@ class ManagerData {
             }
         }
     }
+    
+    func loadCountries() {
+        let url = "http://api.travelpayouts.com/data/countries.json"
+        
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func loadCities() {
+        let url = "http://api.travelpayouts.com/data/cities.json"
+        
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func loadAirports() {
+        let url = "http://api.travelpayouts.com/data/airports.json"
+        
+        Alamofire.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
