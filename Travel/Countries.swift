@@ -13,4 +13,6 @@ class Countries: Object {
     dynamic var code: String = ""
     dynamic var name: String = ""
     dynamic var currency: String = ""
+    dynamic var nameRu: String = ""
+    
 }

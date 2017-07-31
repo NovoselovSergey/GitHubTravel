@@ -13,6 +13,7 @@ class Cities: Object {
     dynamic var code: String = ""
     dynamic var name: String = ""
     dynamic var time_zone: String = ""
+    dynamic var nameRu: String = ""
     dynamic var country_code: String = ""
     
 }
