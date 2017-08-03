@@ -50,7 +50,6 @@ class ManagerData {
         }
         //                try! realm.commitWrite()
         print("3. write \(Thread.current)")
-        
     }
     
     func loadCountries() {
@@ -94,7 +93,7 @@ class ManagerData {
         }
 //                try! realm.commitWrite()
         print("6. write \(Thread.current)")
-    
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: nil)
     }
 
     func loadCities() {

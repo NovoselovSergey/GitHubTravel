@@ -30,6 +30,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeViewColor), name: NSNotification.Name(rawValue: "color"), object: nil)
+        
         manager.loadJSON("OSL", "LON")
         manager.loadCountries()
         manager.loadCities()
@@ -39,10 +42,18 @@ class ViewController: UIViewController {
             
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func changeViewColor() {
+        view.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "color"), object: nil)
     }
 
 

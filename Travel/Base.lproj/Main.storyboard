@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pBE-4s-vWh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pBE-4s-vWh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,7 +44,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iTO-YQ-DiH"/>
-                                    <segue destination="XDX-pI-iT8" kind="show" id="ljt-sh-VMk"/>
+                                    <segue destination="XDX-pI-iT8" kind="show" id="2E5-yZ-lA3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YGt-h1-aFP">
@@ -108,7 +108,6 @@
         <!--List Of Flights Table View Controller-->
         <scene sceneID="9bR-Z7-tyu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zYF-74-RXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="XDX-pI-iT8" customClass="ListOfFlightsTableViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="z5t-RC-ZVM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -130,6 +129,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYF-74-RXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2560.8000000000002" y="50.824587706146929"/>
         </scene>
