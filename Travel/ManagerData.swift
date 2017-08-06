@@ -11,17 +11,44 @@ import Alamofire
 import RealmSwift
 import SwiftyJSON
 
+private let _sharedManager = ManagerData()
+
 class ManagerData {
+    
+    //--------------------------------------------
+    //    singltone
+    class var sharedManager: ManagerData {
+        return _sharedManager
+    }
+    //--------------------------------------------
+    //--------------------------------------------
+    private var _tickets: [Tickets] = []
+    
+    var tickets: [Tickets] {
+        var ticketsCopy: [Tickets]!
+        concurrentQueue.sync {
+            ticketsCopy = self._tickets
+        }
+        return ticketsCopy
+    }
+    //--------------------------------------------
+    //    data from DB
+    func getTicketsFromDB() {
+        let realm = try! Realm()
+        self._tickets = Array(realm.objects(Tickets.self))
+    }
+    //--------------------------------------------
+    
     func loadJSON(_ cityFrom: String, _ cityWhere: String) {
-//        let realm = try! Realm()
+        //        let realm = try! Realm()
         let url = "http://api.travelpayouts.com/v2/prices/latest?origin=\(cityFrom)&currency=rub&destination=\(cityWhere)&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token="
         
         Alamofire.request(url, method: .get).validate().responseJSON(queue: concurrentQueue) { response in
-        print("1. startQuene \(Thread.current)")
+            print("1. startQuene \(Thread.current)")
             switch response.result {
             case .success(let value):
                 let jsonTicket = JSON(value)
-//                print("City: \(json["data"]["destination"].stringValue)")
+                //                print("City: \(json["data"]["destination"].stringValue)")
                 for (_, subJson) in jsonTicket["data"] {
                     let ticket = Tickets()
                     ticket.codeFrom = subJson["origin"].stringValue
@@ -32,9 +59,9 @@ class ManagerData {
                     print("2. load \(Thread.current)")
                     self.TicketWriteDB(data: ticket)
                     
-//                    try! realm.write {
-//                        realm.add(ticket)
-//                    }
+                    //                    try! realm.write {
+                    //                        realm.add(ticket)
+                    //                    }
                 }
             case .failure(let error):
                 print(error)
@@ -53,30 +80,32 @@ class ManagerData {
     }
     
     func loadCountries() {
-//        let realm = try! Realm()
+        //        let realm = try! Realm()
         let url = "http://api.travelpayouts.com/data/countries.json"
         
         Alamofire.request(url, method: .get).validate().responseJSON(queue: concurrentQueue) { response in
-        print("4. startQuene \(Thread.current)")
+            print("4. startQuene \(Thread.current)")
             
             switch response.result {
             case .success(let value):
                 let jsonCountries = JSON(value)
-//                print("JSON: \(jsonCountries)")
-                for (_, subJson) in jsonCountries {
-                    let country = Countries()
-                    country.code = subJson["code"].stringValue
-                    country.name = subJson["name"].stringValue
-                    country.currency = subJson["currency"].stringValue
-                    country.nameRu = subJson["name_translations"]["ru"].stringValue
-                    print(country)
+                //                print("JSON: \(jsonCountries)")
+                concurrentQueue.async {
+                    for (_, subJson) in jsonCountries {
+                        let country = Countries()
+                        country.code = subJson["code"].stringValue
+                        country.name = subJson["name"].stringValue
+                        country.currency = subJson["currency"].stringValue
+                        country.nameRu = subJson["name_translations"]["ru"].stringValue
+                        print(country)
+                        
+                        print("5. load \(Thread.current)")
+                        self.countriesWriteDB(data: country)
+                    }
                     
-                    print("5. load \(Thread.current)")
-                    self.countriesWriteDB(data: country)
-                    
-//                    try! realm.write {
-//                        realm.add(country)
-//                    }
+                    //                    try! realm.write {
+                    //                        realm.add(country)
+                    //                    }
                 }
                 
             case .failure(let error):
@@ -87,39 +116,41 @@ class ManagerData {
     
     func countriesWriteDB(data: Countries) {
         let realm = try! Realm()
-//                realm.beginWrite()
+        //                realm.beginWrite()
         try! realm.write {
             realm.add(data)
         }
-//                try! realm.commitWrite()
+        //                try! realm.commitWrite()
         print("6. write \(Thread.current)")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "color"), object: nil)
     }
-
+    
     func loadCities() {
         let url = "http://api.travelpayouts.com/data/cities.json"
         
         Alamofire.request(url, method: .get).validate().responseJSON { response in
-        print("7. startQuene \(Thread.current)")
+            print("7. startQuene \(Thread.current)")
             switch response.result {
             case .success(let value):
                 let jsonCities = JSON(value)
-//                print("JSON: \(json)")
-                for (_, subJson) in jsonCities {
-                    let city = Cities()
-                    city.code = subJson["code"].stringValue
-                    city.name = subJson["name"].stringValue
-                    city.time_zone = subJson["time_zone"].stringValue
-                    city.nameRu = subJson["name_translations"]["ru"].stringValue
-                    city.country_code = subJson["country_code"].stringValue
-                    print(city)
-                    
-                    print("8. load \(Thread.current)")
-                    self.citiesWriteDB(data: city)
-                    
-                    //                    try! realm.write {
-                    //                        realm.add(country)
-                    //                    }
+                //                print("JSON: \(json)")
+                concurrentQueue.async {
+                    for (_, subJson) in jsonCities {
+                        let city = Cities()
+                        city.code = subJson["code"].stringValue
+                        city.name = subJson["name"].stringValue
+                        city.time_zone = subJson["time_zone"].stringValue
+                        city.nameRu = subJson["name_translations"]["ru"].stringValue
+                        city.country_code = subJson["country_code"].stringValue
+                        print(city)
+                        
+                        print("8. load \(Thread.current)")
+                        self.citiesWriteDB(data: city)
+                        
+                        //                    try! realm.write {
+                        //                        realm.add(country)
+                        //                    }
+                    }
                 }
                 
             case .failure(let error):
