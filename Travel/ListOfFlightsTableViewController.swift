@@ -10,8 +10,17 @@ import UIKit
 
 class ListOfFlightsTableViewController: UITableViewController {
     
+    let manager: ManagerData = ManagerData()
+    var classTicketList: [Tickets] = []
+    var cityFrom: String = ""
+    var cityWhere: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ManagerData.sharedManager.getTicketsFromDB()
+        manager.loadJSON(cityFrom, cityWhere)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTickets), name: NSNotification.Name(rawValue: "tickets"), object: nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,6 +62,16 @@ class ListOfFlightsTableViewController: UITableViewController {
         return cell
     }
     
+    func loadTickets() {
+        DispatchQueue.main.async {
+            print("99. refresh \(Thread.current)")
+            self.tableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "tickets"), object: nil)
+    }
     
     /*
      // Override to support conditional editing of the table view.

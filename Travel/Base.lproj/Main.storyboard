@@ -95,9 +95,11 @@
                     <connections>
                         <outlet property="backLabel" destination="MBP-OM-4B6" id="N5i-8H-H8s"/>
                         <outlet property="fromLabel" destination="Taj-fu-g1c" id="T8j-VU-FDV"/>
+                        <outlet property="fromTextField" destination="YGt-h1-aFP" id="qAq-qO-46k"/>
                         <outlet property="searchButton" destination="Mip-qN-KI4" id="uqg-tn-TMv"/>
                         <outlet property="thereLabel" destination="bHN-c1-mh2" id="fRr-tm-5aP"/>
                         <outlet property="whereLabel" destination="5NH-tU-0bM" id="8JX-rL-S3B"/>
+                        <outlet property="whereTextField" destination="aXD-HE-QXJ" id="gQD-j7-RG7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
