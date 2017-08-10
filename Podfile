@@ -7,6 +7,8 @@ target 'Travel' do
 pod 'Alamofire', '~> 4.5'
 pod 'RealmSwift', '~> 2.8'
 pod 'SwiftyJSON', '~> 3.1'
+pod 'Firebase/Core'
+pod 'Firebase/Database’
 
 
   # Pods for Travel

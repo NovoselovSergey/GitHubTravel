@@ -15,6 +15,8 @@
 		8A8458CD1F25533C009DEE23 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8458CC1F25533C009DEE23 /* Cities.swift */; };
 		8A8458CF1F25536C009DEE23 /* Airports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8458CE1F25536C009DEE23 /* Airports.swift */; };
 		8A975DD31F1269F5008F11D6 /* ManagerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A975DD21F1269F5008F11D6 /* ManagerData.swift */; };
+		8AB184871F3BFCAD004253BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AB184861F3BFCAD004253BE /* GoogleService-Info.plist */; };
+		8AB184891F3CA77C004253BE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB184881F3CA77C004253BE /* SearchViewController.swift */; };
 		8AF97A9B1F0C3F2900CADA1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */; };
 		8AF97A9D1F0C3F2900CADA1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */; };
 		8AF97AA01F0C3F2900CADA1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF97A9E1F0C3F2900CADA1B /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		8A8458CC1F25533C009DEE23 /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		8A8458CE1F25536C009DEE23 /* Airports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airports.swift; sourceTree = "<group>"; };
 		8A975DD21F1269F5008F11D6 /* ManagerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerData.swift; sourceTree = "<group>"; };
+		8AB184861F3BFCAD004253BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8AB184881F3CA77C004253BE /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8AF97A971F0C3F2900CADA1B /* Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */,
+				8AB184881F3CA77C004253BE /* SearchViewController.swift */,
 				8A975DD21F1269F5008F11D6 /* ManagerData.swift */,
 				8AF97A9C1F0C3F2900CADA1B /* ViewController.swift */,
 				8A060B1F1F0E3B0300C85867 /* TravelData.swift */,
@@ -105,6 +110,7 @@
 				8AF97AA11F0C3F2900CADA1B /* Assets.xcassets */,
 				8AF97AA31F0C3F2900CADA1B /* LaunchScreen.storyboard */,
 				8AF97AA61F0C3F2900CADA1B /* Info.plist */,
+				8AB184861F3BFCAD004253BE /* GoogleService-Info.plist */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -181,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AF97AA51F0C3F2900CADA1B /* LaunchScreen.storyboard in Resources */,
+				8AB184871F3BFCAD004253BE /* GoogleService-Info.plist in Resources */,
 				8AF97AA21F0C3F2900CADA1B /* Assets.xcassets in Resources */,
 				8AF97AA01F0C3F2900CADA1B /* Main.storyboard in Resources */,
 			);
@@ -241,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AB184891F3CA77C004253BE /* SearchViewController.swift in Sources */,
 				8A8458CD1F25533C009DEE23 /* Cities.swift in Sources */,
 				8AF97A9D1F0C3F2900CADA1B /* ViewController.swift in Sources */,
 				8A22AC591F16B8E800CFA623 /* Tickets.swift in Sources */,

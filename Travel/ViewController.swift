@@ -20,7 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var whereTextField: UITextField!
-    
+    @IBAction func pressFrom(_ sender: Any) {
+        performSegue(withIdentifier: "addCity", sender: nil)
+    }
+    @IBAction func pressWhere(_ sender: Any) {
+        performSegue(withIdentifier: "addCity", sender: nil)
+    }
     
     var cityList: [String] = ["TIV", "LON", "OSL", "BLR"]
     let manager: ManagerData = ManagerData()
@@ -31,7 +36,7 @@ class ViewController: UIViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL)
         //        print("Билеты:\(ManagerData.sharedManager.tickets)")
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(changeViewColor), name: NSNotification.Name(rawValue: "color"), object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(changeViewColor), name: NSNotification.Name(rawValue: "color"), object: nil)
         
         //        manager.loadJSON("OSL", "LON")
         //        manager.loadCountries()
@@ -43,9 +48,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-//    func changeViewColor() {
-//        view.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
-//    }
+    //    func changeViewColor() {
+    //        view.backgroundColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

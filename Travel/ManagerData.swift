@@ -41,7 +41,7 @@ class ManagerData {
     
     func loadJSON(_ cityFrom: String, _ cityWhere: String) {
         //        let realm = try! Realm()
-        let url = "http://api.travelpayouts.com/v2/prices/latest?origin=\(cityFrom)&currency=rub&destination=\(cityWhere)&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token=eb3a8f0f77e463487f11791048fa31fe"
+        let url = "http://api.travelpayouts.com/v2/prices/latest?origin=\(cityFrom)&currency=rub&destination=\(cityWhere)&period_type=year&page=1&limit=30&show_to_affiliates=true&sorting=price&trip_class=0&token="
         
         Alamofire.request(url, method: .get).validate().responseJSON(queue: concurrentQueue) { response in
             print("1. startQuene \(Thread.current)")
