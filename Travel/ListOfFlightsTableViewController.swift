@@ -20,7 +20,7 @@ class ListOfFlightsTableViewController: UITableViewController {
         ManagerData.sharedManager.getTicketsFromDB()
         manager.loadJSON(cityFrom, cityWhere)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(loadTickets), name: NSNotification.Name(rawValue: "tickets"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadTickets), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

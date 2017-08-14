@@ -77,7 +77,7 @@ class ManagerData {
         }
         //                try! realm.commitWrite()
         print("3. write \(Thread.current)")
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "tickets"), object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
     }
     
     func loadCountries() {

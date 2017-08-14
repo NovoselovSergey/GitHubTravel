@@ -13,15 +13,21 @@ import RealmSwift
 
 class SearchViewController: UIViewController, UISearchResultsUpdating {
     
+    var resultSearchController: UISearchController!
     var searchResult: [String] = []
     var locallist: [String] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,15 +38,13 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         if let searchText = searchController.searchBar.text {
             if searchText.characters.count <= 2 {
                 searchResult = []
-            }else {
+            } else {
                 locallist = searchResult
                 searchResult = []
             }
             filterContent(searchText: searchText)
-//            tableView.reloadData()
+            //            tableView.reloadData()
         }
-        
-        
     }
     
     func filterContent(searchText: String) {
@@ -53,9 +57,8 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                     for (_, subJSON) in json {
                         for (_, sub2JSON) in subJSON {
                             self.searchResult.append(sub2JSON["name"].stringValue)
-//                            self.tableView.reloadData()
+                            //                            self.tableView.reloadData()
                         }
-                        
                     }
                 }
             })
@@ -69,29 +72,28 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
                     let json = JSON(value)
                     for (_, subJSON) in json {
                         self.searchResult.append(subJSON["name"].stringValue)
-//                        self.tableView.reloadData()
+                        //                        self.tableView.reloadData()
                     }
-                    
                 }
             })
         } else  {
             for value in locallist {
                 if value.contains(searchText) {
                     searchResult.append(value)
-//                    self.tableView.reloadData()
+                    //                    self.tableView.reloadData()
                 }
             }
         }
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
