@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import RealmSwift
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var whereLabel: UILabel!
@@ -29,9 +30,17 @@ class ViewController: UIViewController {
     
     var cityList: [String] = ["TIV", "LON", "OSL", "BLR"]
     let manager: ManagerData = ManagerData()
+    let locationManager = CLLocationManager()
+    let coder = CLGeocoder()
+    var coordinate = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         ManagerData.sharedManager.getTicketsFromDB()
         print(Realm.Configuration.defaultConfiguration.fileURL)
         //        print("Билеты:\(ManagerData.sharedManager.tickets)")
@@ -57,6 +66,22 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let currentLocation  = locations.first?.coordinate {
+            coordinate = CLLocation(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
+            coder.reverseGeocodeLocation(coordinate) { (myPlaces, Error) -> Void in
+                if let place = myPlaces?.first {
+//                    print(place.locality)
+                    if ManagerData.sharedManager.tickets.first == nil {
+                        if let city = place.locality {
+                            self.fromTextField.text = city
+                        }
+                    }
+                }
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

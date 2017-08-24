@@ -11,11 +11,13 @@ import SwiftyJSON
 import FirebaseDatabase
 import RealmSwift
 
-class SearchViewController: UIViewController, UISearchResultsUpdating {
+class SearchTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var resultSearchController: UISearchController!
     var searchResult: [String] = []
     var locallist: [String] = []
+    let manager: ManagerData = ManagerData()
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,28 @@ class SearchViewController: UIViewController, UISearchResultsUpdating {
         self.resultSearchController.searchResultsUpdater = self
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if resultSearchController.isActive {
+            return self.searchResult.count
+        } else {
+            return 1
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+            cell.textLabel?.text = self.searchResult[indexPath.row]
+            return cell
     }
     
     override func didReceiveMemoryWarning() {
