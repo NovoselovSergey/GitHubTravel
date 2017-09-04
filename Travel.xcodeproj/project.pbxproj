@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7DD41998E77086E948BA0236 /* Pods_Travel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEDEB60E58D605008B620E8 /* Pods_Travel.framework */; };
 		8A060B201F0E3B0300C85867 /* TravelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A060B1F1F0E3B0300C85867 /* TravelData.swift */; };
+		8A1E85B61F5DE40300527D89 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1E85B51F5DE40300527D89 /* NotificationCenter.framework */; };
+		8A1E85B91F5DE40300527D89 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E85B81F5DE40300527D89 /* TodayViewController.swift */; };
+		8A1E85BC1F5DE40300527D89 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E85BA1F5DE40300527D89 /* MainInterface.storyboard */; };
+		8A1E85C01F5DE40300527D89 /* ChipFlights.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8A1E85B41F5DE40300527D89 /* ChipFlights.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8A22AC591F16B8E800CFA623 /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22AC581F16B8E800CFA623 /* Tickets.swift */; };
 		8A22AC5B1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A22AC5A1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift */; };
 		8A8458CB1F255311009DEE23 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8458CA1F255311009DEE23 /* Countries.swift */; };
@@ -24,10 +28,41 @@
 		8AF97AA51F0C3F2900CADA1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AF97AA31F0C3F2900CADA1B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8A1E85BE1F5DE40300527D89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AF97A8F1F0C3F2900CADA1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A1E85B31F5DE40300527D89;
+			remoteInfo = ChipFlights;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A1E85C41F5DE40300527D89 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8A1E85C01F5DE40300527D89 /* ChipFlights.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0A596DAE7E93E9EF4672C610 /* Pods-Travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.debug.xcconfig"; sourceTree = "<group>"; };
 		80B1BAA0FA51C7FE2915D64A /* Pods-Travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel.release.xcconfig"; path = "Pods/Target Support Files/Pods-Travel/Pods-Travel.release.xcconfig"; sourceTree = "<group>"; };
 		8A060B1F1F0E3B0300C85867 /* TravelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelData.swift; sourceTree = "<group>"; };
+		8A1E85B41F5DE40300527D89 /* ChipFlights.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ChipFlights.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1E85B51F5DE40300527D89 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8A1E85B81F5DE40300527D89 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8A1E85BB1F5DE40300527D89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8A1E85BD1F5DE40300527D89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A1E85C51F5DE4CC00527D89 /* Travel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Travel.entitlements; sourceTree = "<group>"; };
+		8A1E85C61F5DE4FA00527D89 /* ChipFlights.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChipFlights.entitlements; sourceTree = "<group>"; };
 		8A22AC581F16B8E800CFA623 /* Tickets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
 		8A22AC5A1F1C02C800CFA623 /* ListOfFlightsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfFlightsTableViewController.swift; sourceTree = "<group>"; };
 		8A8458CA1F255311009DEE23 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
@@ -47,6 +82,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8A1E85B11F5DE40300527D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1E85B61F5DE40300527D89 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AF97A941F0C3F2900CADA1B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,6 +110,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8A1E85B71F5DE40300527D89 /* ChipFlights */ = {
+			isa = PBXGroup;
+			children = (
+				8A1E85C61F5DE4FA00527D89 /* ChipFlights.entitlements */,
+				8A1E85B81F5DE40300527D89 /* TodayViewController.swift */,
+				8A1E85BA1F5DE40300527D89 /* MainInterface.storyboard */,
+				8A1E85BD1F5DE40300527D89 /* Info.plist */,
+			);
+			path = ChipFlights;
+			sourceTree = "<group>";
+		};
 		8A8458D01F25537F009DEE23 /* LoadInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF97A991F0C3F2900CADA1B /* Travel */,
+				8A1E85B71F5DE40300527D89 /* ChipFlights */,
 				8AF97A981F0C3F2900CADA1B /* Products */,
 				79B16138655991A65073943B /* Pods */,
 				ABC57279C66A5454704530BB /* Frameworks */,
@@ -92,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8AF97A971F0C3F2900CADA1B /* Travel.app */,
+				8A1E85B41F5DE40300527D89 /* ChipFlights.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +155,7 @@
 		8AF97A991F0C3F2900CADA1B /* Travel */ = {
 			isa = PBXGroup;
 			children = (
+				8A1E85C51F5DE4CC00527D89 /* Travel.entitlements */,
 				8AF97A9A1F0C3F2900CADA1B /* AppDelegate.swift */,
 				8AB184881F3CA77C004253BE /* SearchTableViewController.swift */,
 				8A975DD21F1269F5008F11D6 /* ManagerData.swift */,
@@ -119,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				FCEDEB60E58D605008B620E8 /* Pods_Travel.framework */,
+				8A1E85B51F5DE40300527D89 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +184,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8A1E85B31F5DE40300527D89 /* ChipFlights */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A1E85C11F5DE40300527D89 /* Build configuration list for PBXNativeTarget "ChipFlights" */;
+			buildPhases = (
+				8A1E85B01F5DE40300527D89 /* Sources */,
+				8A1E85B11F5DE40300527D89 /* Frameworks */,
+				8A1E85B21F5DE40300527D89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChipFlights;
+			productName = ChipFlights;
+			productReference = 8A1E85B41F5DE40300527D89 /* ChipFlights.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		8AF97A961F0C3F2900CADA1B /* Travel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8AF97AA91F0C3F2900CADA1B /* Build configuration list for PBXNativeTarget "Travel" */;
@@ -136,10 +211,12 @@
 				8AF97A951F0C3F2900CADA1B /* Resources */,
 				14CED4481C167847114039EB /* [CP] Embed Pods Frameworks */,
 				4D5710ACE04EA315EEFB3523 /* [CP] Copy Pods Resources */,
+				8A1E85C41F5DE40300527D89 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8A1E85BF1F5DE40300527D89 /* PBXTargetDependency */,
 			);
 			name = Travel;
 			productName = Travel;
@@ -156,10 +233,25 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Sergey Novoselov";
 				TargetAttributes = {
+					8A1E85B31F5DE40300527D89 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = XFZ44YY786;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					8AF97A961F0C3F2900CADA1B = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = XFZ44YY786;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -177,11 +269,20 @@
 			projectRoot = "";
 			targets = (
 				8AF97A961F0C3F2900CADA1B /* Travel */,
+				8A1E85B31F5DE40300527D89 /* ChipFlights */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8A1E85B21F5DE40300527D89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1E85BC1F5DE40300527D89 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AF97A951F0C3F2900CADA1B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,6 +345,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8A1E85B01F5DE40300527D89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1E85B91F5DE40300527D89 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8AF97A931F0C3F2900CADA1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,7 +372,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8A1E85BF1F5DE40300527D89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8A1E85B31F5DE40300527D89 /* ChipFlights */;
+			targetProxy = 8A1E85BE1F5DE40300527D89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		8A1E85BA1F5DE40300527D89 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A1E85BB1F5DE40300527D89 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		8AF97A9E1F0C3F2900CADA1B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -283,6 +408,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A1E85C21F5DE40300527D89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ChipFlights/ChipFlights.entitlements;
+				DEVELOPMENT_TEAM = XFZ44YY786;
+				INFOPLIST_FILE = ChipFlights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SM.TravelApp.ChipFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8A1E85C31F5DE40300527D89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ChipFlights/ChipFlights.entitlements;
+				DEVELOPMENT_TEAM = XFZ44YY786;
+				INFOPLIST_FILE = ChipFlights/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SM.TravelApp.ChipFlights;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		8AF97AA71F0C3F2900CADA1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,11 +535,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0A596DAE7E93E9EF4672C610 /* Pods-Travel.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Travel/Travel.entitlements;
 				DEVELOPMENT_TEAM = XFZ44YY786;
 				INFOPLIST_FILE = Travel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SM.Travel;
+				PRODUCT_BUNDLE_IDENTIFIER = SM.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -396,11 +551,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 80B1BAA0FA51C7FE2915D64A /* Pods-Travel.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Travel/Travel.entitlements;
 				DEVELOPMENT_TEAM = XFZ44YY786;
 				INFOPLIST_FILE = Travel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SM.Travel;
+				PRODUCT_BUNDLE_IDENTIFIER = SM.TravelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -409,6 +566,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A1E85C11F5DE40300527D89 /* Build configuration list for PBXNativeTarget "ChipFlights" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1E85C21F5DE40300527D89 /* Debug */,
+				8A1E85C31F5DE40300527D89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8AF97A921F0C3F2900CADA1B /* Build configuration list for PBXProject "Travel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
