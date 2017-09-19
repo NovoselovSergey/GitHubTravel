@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import RealmSwift
 import CoreLocation
+import UserNotifications
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -27,12 +28,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func pressWhere(_ sender: Any) {
         performSegue(withIdentifier: "addCity", sender: nil)
     }
+    @IBAction func rememberTicket(_ sender: Any) {
+        message.title = "Билеты"
+    //    message.subtitle = "Message Subtitle"
+        message.body = "У Вас куплены билеты"
+        message.badge = 1
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "done", content: message, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
     
     var cityList: [String] = ["TIV", "LON", "OSL", "BLR"]
     let manager: ManagerData = ManagerData()
     let locationManager = CLLocationManager()
     let coder = CLGeocoder()
     var coordinate = CLLocation()
+    let message = UNMutableNotificationContent()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +51,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { didAllow, error in
+            if let err = error {
+                print(err)
+            }
+            if didAllow {
+                print("get permishen succes")
+            }else{
+                print("dont get permishen")
+            }
+        })
         
         ManagerData.sharedManager.getTicketsFromDB()
         print(Realm.Configuration.defaultConfiguration.fileURL)
