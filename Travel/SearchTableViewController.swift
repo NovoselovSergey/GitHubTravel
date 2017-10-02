@@ -27,8 +27,6 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
         self.resultSearchController.dimsBackgroundDuringPresentation = false
         self.resultSearchController.searchBar.sizeToFit()
         self.tableView.tableHeaderView = self.resultSearchController.searchBar
-        
-        // Do any additional setup after loading the view.
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,11 +34,7 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if resultSearchController.isActive {
             return self.searchResult.count
-        } else {
-            return 1
-        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,56 +52,39 @@ class SearchTableViewController: UITableViewController, UISearchResultsUpdating 
     func updateSearchResults(for searchController: UISearchController) {
         
         if let searchText = searchController.searchBar.text {
-            if searchText.characters.count <= 2 {
-                searchResult = []
-            } else {
-                locallist = searchResult
-                searchResult = []
-            }
+//            locallist = searchResult
+//            searchResult = []
             filterContent(searchText: searchText)
-            //            tableView.reloadData()
+            tableView.reloadData()
         }
+        
+        
     }
     
     func filterContent(searchText: String) {
         
-        if searchText.characters.count == 1 {
-            Database.database().reference().child("ListCityCaharacters").child(searchText).observe(.value, with: { snapshot in
+//        if searchText.characters.count == 1 {
+            Database.database().reference().child("Countries").observe(.value, with: { snapshot in
                 if let value = snapshot.value {
-                    //                    print(value)
-                    let json = JSON(value)
-                    for (_, subJSON) in json {
-                        for (_, sub2JSON) in subJSON {
-                            self.searchResult.append(sub2JSON["name"].stringValue)
-                            //                            self.tableView.reloadData()
-                        }
-                    }
-                }
-            })
-        } else if  searchText.characters.count == 2 {
-            let firstChar: String = String(searchText.characters.first!)
-            let secondChar: String = String(searchText.characters.last!)
-            
-            Database.database().reference().child("ListCityCaharacters").child(firstChar).child(secondChar).observe(.value, with: { snapshot in
-                if let value = snapshot.value {
-                    //                    print(value)
+                    print(value)
                     let json = JSON(value)
                     for (_, subJSON) in json {
                         self.searchResult.append(subJSON["name"].stringValue)
-                        //                        self.tableView.reloadData()
+                        self.tableView.reloadData()
                     }
                 }
             })
-        } else  {
-            for value in locallist {
-                if value.contains(searchText) {
-                    searchResult.append(value)
-                    //                    self.tableView.reloadData()
-                }
-            }
-        }
+//        }
+//        else {
+//            for value in locallist {
+//                if value.contains(searchText) {
+//                    searchResult.append(value)
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }
     }
-    
+
     /*
      // MARK: - Navigation
      

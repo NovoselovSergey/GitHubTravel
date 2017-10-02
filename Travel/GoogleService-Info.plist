@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>513047496715-0ngtc4omgp4u38ll86kl9i55ng0cfnk9.apps.googleusercontent.com</string>
+	<string>757680545181-rmgu07opqlk6rm8qbltge8settlv2pnj.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.513047496715-0ngtc4omgp4u38ll86kl9i55ng0cfnk9</string>
+	<string>com.googleusercontent.apps.757680545181-rmgu07opqlk6rm8qbltge8settlv2pnj</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBUAQwYhXO8RfKqZRCPQu9_OJDR44dLxmM</string>
+	<string>AIzaSyD3oixerdHhoQMhsHcLC65_8nd_1PjpNwE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>513047496715</string>
+	<string>757680545181</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>SM.Travel</string>
+	<string>SM.TravelApp</string>
 	<key>PROJECT_ID</key>
-	<string>travel-c4f66</string>
+	<string>travel-942fd</string>
 	<key>STORAGE_BUCKET</key>
-	<string>travel-c4f66.appspot.com</string>
+	<string>travel-942fd.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:513047496715:ios:4013b8cdc9fb388f</string>
+	<string>1:757680545181:ios:b7aeee11810bcd9d</string>
 	<key>DATABASE_URL</key>
-	<string>https://travel-c4f66.firebaseio.com</string>
+	<string>https://travel-942fd.firebaseio.com</string>
 </dict>
 </plist>

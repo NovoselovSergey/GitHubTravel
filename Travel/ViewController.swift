@@ -12,6 +12,7 @@ import SwiftyJSON
 import RealmSwift
 import CoreLocation
 import UserNotifications
+import FirebaseDatabase
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -23,8 +24,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var whereTextField: UITextField!
     @IBAction func pressFrom(_ sender: Any) {
-        performSegue(withIdentifier: "addCity", sender: nil)
     }
+    @IBOutlet weak var pressFromLabel: UILabel!
+    //    @IBAction func pressFrom(_ sender: Any) {
+//        performSegue(withIdentifier: "addCity", sender: nil)
+//    }
     @IBAction func pressWhere(_ sender: Any) {
         performSegue(withIdentifier: "addCity", sender: nil)
     }
@@ -44,6 +48,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let coder = CLGeocoder()
     var coordinate = CLLocation()
     let message = UNMutableNotificationContent()
+    var searchResult: [Countries] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +82,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         
         searchButton.backgroundColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+        
+        pressFromLabel.text = "Москва"
+        pressFromLabel.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        Database.database().reference().child("Countries").observe(.value, with: { snapshot in
+            if let value = snapshot.value {
+//                print(value)
+                let json = JSON(value)
+                for (_, subJSON) in json {
+                    let country = Countries()
+                    country.code = subJSON["code"].stringValue
+                    country.name = subJSON["name"].stringValue
+                    country.currency = subJSON["currency"].stringValue
+                    country.nameRu = subJSON["name_translations"]["ru"].stringValue
+                    self.searchResult.append(country)
+                    //                        self.tableView.reloadData()
+                }
+//                print(self.searchResult)
+            }
+        })
         
         // Do any additional setup after loading the view, typically from a nib.
     }
